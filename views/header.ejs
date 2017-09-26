@@ -1,0 +1,112 @@
+<!DOCTYPE html>  
+<html lang="en">  
+  <head>
+    <meta charset="utf-8">
+    
+    <!--Google Sign In-->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="945121885326-ral6qki4908gs7ke164uk7nsrtsoqppi.apps.googleusercontent.com">
+
+    <!--fonts-->
+    <link href="//fonts.googleapis.com/css?family=Raleway" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"/>
+
+    <!--local stylesheets-->
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/navbar.css" />
+
+    <!--favicon-->
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+</head>
+<!--based off of Bootstrap template for navbar-->
+<nav class="navbar navbar-inverse navbar-fixed-top" id="nav">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <ul class="nav navbar-nav">
+        <li id="homei">
+          <a class="navbar-brand" href="#home">
+            <img id="logo" src="/images/bikelogo.png" style="display: inline-block;">
+            <span style="display: inline-block;">Autonomous Bicycle Team</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li id="graphi" class="hidden"><a href="#graph" id="graph" >Data</a></li>
+        <li id="navi" class="hidden"><a href="#navigation" id="navigation">Navigation</a></li>
+        <li id="abouti"><a href="#about" id="about">About</a></li>
+        <li id="teami"><a href="#team" id="team">Team</a></li>
+        <li id="subteami"><a href="#subteams" id="subteams">Subteams</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="glyphicon glyphicon-user"></span> 
+            <strong id="signin-nav">Team Sign In</strong>
+            <span class="glyphicon glyphicon-chevron-down"></span>
+          </a>
+
+          <style>
+          /*centering CSS*/
+            .child{
+              display: table;
+              margin: 0 auto;
+            }
+            #inner-menu{
+              padding:20px;
+            }
+            .image-pad{
+
+              padding-bottom: 15px;
+            }
+          </style>
+
+          <ul class="dropdown-menu">
+            <li>
+              <div class="navbar-login">
+                <div id='inner-menu'>
+                  
+                  <div>
+                    <div id="propic" class="child image-pad"><span id="user-icon" class="glyphicon glyphicon-user child"></span></div>
+
+                    <div id="g-signin" class="child"><div class="g-signin2 child" data-onsuccess="onSignIn"></div></div>
+                    <div id="g-signout" class="btn hidden child" > <a href="#" class="child" onclick="loginView.logout();">Sign out</a></div>
+                    
+                  </div>
+
+                  <div class="hidden" id="account-details">
+                    <p class="text-left " id="d-name" ><strong>DemoName</strong></p>
+                    <p class="text-left small " id="d-email" >justdemo@gmail.com</p>
+                  </div>
+                </div>
+              </div>
+             
+            </li>
+          </ul>
+
+          </li>
+        </ul>
+      </div>
+
+  </div>
+</nav>
+
+<body id="navpad">
+  
+</body>
+<script src="javascripts/navbar.js"></script>
+
+
+</html> 

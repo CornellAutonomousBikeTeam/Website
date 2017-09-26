@@ -1,0 +1,112 @@
+console.log('new message');
+    var new_msg = JSON.parse(msg);
+    
+    //may be inefficient, because it's reading all the file names in the data folder everytime ws receives a message
+    //existing files array doesnt work the first time after the server is started
+    fs.readdir('public/data/', (err, files) => {
+        if(err){
+          console.log("error in fs.readdir");
+        }
+        else{
+          files.forEach(file => {
+            if(file!='.DS_Store'){
+              existingFileNames.push(file);
+            }
+          });
+        }
+      });
+
+    if (new_msg.msgType == "save"){
+      var new_data = dataToString(datax);
+      var filename = new_msg.filename.toString();
+
+      if(existingFileNames.includes(filename+'.csv') || filename.length < 5 || existingFileNames.includes(filename)){
+        console.log("invalid filename");
+        var message = (filename.length < 5) ? "filename must be over 5 characters" : "filename is taken";
+        // send error 
+        var errorMessage = {
+          type: "filenameError",
+          msg: message
+        };
+        ws.send(JSON.stringify(errorMessage));
+      }
+      else{
+        console.log('write file');
+        createCSVFile(new_data, filename);
+        
+        var successMessage = {
+          type: "fileWritten",
+          msg: filename + ".csv written",
+          newFilename: filename+'.csv',
+          existingFileNames: existingFileNames
+        };
+        ws.send(JSON.stringify(successMessage));
+      }
+    }
+    else if (new_msg.msgType == 'reset'){
+      console.log('reseting data')
+      data = new Array(6);
+    }
+    else if (new_msg.msgType == 'download'){
+      var fileAddr = 'public/data/'+ new_msg.filename;
+      console.log('download: '+fileAddr);
+      var filename = new_msg.filename;
+
+      app.get('/download'+filename, function(req,res){
+       res.download(__dirname + '/public/data/'+ filename, filename);
+      })
+    }
+  });
+
+
+  //initial filenames send
+  fs.readdir('public/data/', (err, files) => {
+    if(err){console.log("error in fs.readdir");}
+    else{
+      files.forEach(file => {
+        if(file!='.DS_Store'){
+          var fileObj = 'public/data/' + file;
+          var stats = fs.statSync(fileObj);
+          filesSorted.push({
+              "filename" : file,
+              "creation" : stats['birthtime']
+          });
+          existingFileNames.push(file);
+        }
+      });
+    }
+
+
+
+      app.route('/datastream')
+    .get(function (req, res) { //Handles sending data
+      res.send(data);
+    })
+    .post(function (req, res) { //Handles recieving data
+        console.log(req.body);
+        data.push(req.body);
+      if(d>5000){
+        data[5] = d;
+        // sendToApp(JSON.stringify(data)); //Should I reinitialize the array?
+        // console.log(data);
+        app.ws.send('data-msg', data);
+      } else {
+        var col = Math.floor(Math.trunc(d)/1000);
+        if (col == 1){
+          data[col-1] = d-(col*1500.0);
+        }else if (col == 2){
+          data[col-1] = d-(2500.0);
+        }else if (col == 3){
+          data[col-1] = d-(3500.0);
+        }else if (col == 4){
+          data[col-1] = 0;//d-(4500.0);
+        }
+      }
+    });
+
+  app.route('/getdata')
+    .get(function(req, res){
+      res.send(data);
+    })
+
+

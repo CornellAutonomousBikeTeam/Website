@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+  <!--Bootstrap + JQuery-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>   
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  
+  <% include ../views/header %>    
+    
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div id="mainBody"></div>
+    </div>
+  </div>
+
+</body>
+<% include ../views/footer %>
+<script>
+$(document).ready(function(){
+  
+    function removeActiveClasses(){
+      $('#graphi').removeClass('active');
+      $('#navi').removeClass('active');
+      $('#abouti').removeClass('active');
+      $('#teami').removeClass('active');
+      $('#subteami').removeClass('active');
+      $('#homei').removeClass('active');
+    }
+
+    var $result = $('#mainBody'); 
+
+    $result.load('/home');
+    $('#homei').addClass('active');
+
+    $('#nav .nav li #graph').click(function() {
+      $result.load('/graph');
+      removeActiveClasses();
+      $('#graphi').addClass('active');
+    });
+    $('#nav .nav li #navigation').click (function() {
+      $result.load('/navigation');
+      removeActiveClasses();
+      $('#navi').addClass('active'); 
+    });
+
+    $('#nav .nav li #about').click(function() {
+       $result.load('/about');
+       removeActiveClasses();
+       $('#abouti').addClass('active');
+    });
+    $('#nav .nav li #team').click(function() {
+       $result.load('/team');
+       removeActiveClasses();
+       $('#teami').addClass('active');
+    });
+    $('#nav .navbar-header #homei').click(function() {
+       $result.load('/home');
+       removeActiveClasses();
+       $('#homei').addClass('active');
+    });
+    $('#nav .nav li #subteams').click(function() {
+       $result.load('/subteams');
+       removeActiveClasses();
+       $('#subteami').addClass('active');
+    });
+    $('#nav .nav li #recruitment').click(function() {
+       $result.load('/recruitment');
+       removeActiveClasses();
+       $('#recruitmenti').addClass('active');
+    });
+  });
+  
+</script>
+
+</html>
