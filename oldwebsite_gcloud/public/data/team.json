@@ -1,0 +1,58 @@
+{ "members": [
+  {
+    "imgSrc": "/images/IMG_0094.JPG",
+    "name": "Will Murphy",
+    "position": "Team Lead",
+    "major": "Mechanical Engineering",
+    "year": "Junior '18",
+    "desc": "I joined the team at the beginning of summer 2016 and worked on the front motor to help the bike balance. This past semester, I was the systems sub-team lead, during which I worked on gathering data from our various sensors and giving the balance controller the information it needs to balance. More generally I am a junior interested in robotics, mechatronics and controls. I also am in Sigma Pi fraternity on campus, and I rowed for a year for the Cornell lightweights. I enjoy playing various sports and being outside when I'm not working on the bike!" 
+  },
+  {
+    "imgSrc": "/images/IMG_0062.JPG",
+    "name": "Rohit Bandaru",
+    "position": "",
+    "major": "Electrical and Computer Engineering",
+    "year": "Sophomore '19",
+    "desc": "I am an engineering student who enjoys using innovative technologies for different applications. I primarily work with the web team and developed this website! I am also a member of the Cornell iGEM synthetic biology project team." 
+  },
+  {
+    "imgSrc": "/images/IMG_0100.JPG",
+    "name": "Olav Imsdahl",
+    "position": "Steer By Wire Lead",
+    "major": "Mechanical Engineering",
+    "year": "Senior '17",
+    "desc": "I enjoy working hands-on and solving problems in the lab. I'm also on the lightweight crew team and play piano. My current project is to work on a new Steer by wire bike which is my Meng Project." 
+  },
+  {
+    "imgSrc": "/images/IMG_0087.JPG",
+    "name": "David Miron",
+    "position": "",
+<<<<<<< HEAD
+    "major": "Computer Science",
+=======
+    "major": "Electrical and Computer Engineering",
+>>>>>>> f6ebd74f56faeafe133e45a1fa1514916710cb18
+    "year": "Sophomore '19",
+    "desc": "On campus I am involved in a social fraternity and I am an Outdoor Odyssey Guide. I contribute to the Steer by Wire team by working on hardware and interaction between electronic components." 
+  },
+  {
+<<<<<<< HEAD
+=======
+    "imgSrc": "/images/IMG_0061.JPG",
+    "name": "Kenneth Fang",
+    "position": "",
+    "major": "Undecided (ECE, ME, CS)",
+    "year": "Freshman '20",
+    "desc": "I am interested in robotics in general, as well as theatre design. I have been helping out with software. Aside from the team, I am also on Cornell's Wushu team and Lion Dance club." 
+  },
+  {
+>>>>>>> f6ebd74f56faeafe133e45a1fa1514916710cb18
+    "imgSrc": "/images/IMG_0111.JPG",
+    "name": "Conrad McCarthy",
+    "position": "",
+    "major": "Mechanical Engineering",
+    "year": "Sophomore '19",
+    "desc": "I have a passion for robotics and product design. On campus I am vice president of Spark Product and Industrial Design, a researcher for the Architectural Robotics Lab and a member of Cornell's Sprint Football team. For Autonomous Bicycle, I help design and build the mechanical assembly of the steer-by-wire system for the new bicycle." 
+  }
+]
+}

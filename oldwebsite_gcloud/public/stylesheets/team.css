@@ -1,0 +1,51 @@
+/*
+http://sixrevisions.com/css/circular-images-css/
+image becomes too small with small screen width
+*/
+.circular--landscape {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.circular--landscape img {
+  width: 172px;
+  height: 172px;
+
+  border-radius: 50%;
+}
+
+.avatar{
+  object-fit: cover;
+  width: 200px;
+  height:200px;
+  z-index:0;
+  display: block;
+  border-radius: 50%;
+}
+.wheel{
+
+  z-index:1;
+  top:0;
+  left: 10;
+  position: absolute;
+  display: block;
+}
+.member {
+    padding: 25px;
+    position: relative;
+    margin: 30px;
+}
+p {
+  font-family: Avenir;
+}
+b {
+  font-weight: bolder;
+  font-size: 16;
+}
+h2 {
+    margin-top: 0;
+}
